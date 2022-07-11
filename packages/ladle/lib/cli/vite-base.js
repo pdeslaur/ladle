@@ -104,7 +104,7 @@ const getBaseViteConfig = async (ladleConfig, configFolder, viteConfig) => {
         "prism-react-renderer/themes/github",
         "prism-react-renderer/themes/nightOwl",
         "axe-core",
-        ...(resolve.alias === undefined ? [] : ["react-dom/client"]),
+        ...(!!resolve.alias ? [] : ["react-dom/client"]),
       ],
       entries: [
         path.join(process.cwd(), ".ladle/components.js"),
